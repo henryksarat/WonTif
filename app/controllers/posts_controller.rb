@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  http_basic_authenticate_with :name => "secret", :password => "secret", :except => [:index, :show]
+  
   # GET /posts
   # GET /posts.json
   def index
@@ -57,7 +59,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-    debugger
+
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
