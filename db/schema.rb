@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905193530) do
+ActiveRecord::Schema.define(:version => 20120905215348) do
+
+  create_table "addresses", :force => true do |t|
+    t.integer "client_id"
+  end
+
+  create_table "clients", :force => true do |t|
+  end
+
+  create_table "clients_roles", :id => false, :force => true do |t|
+    t.integer "client_id"
+    t.integer "role_id"
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -22,6 +34,10 @@ ActiveRecord::Schema.define(:version => 20120905193530) do
   end
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
+
+  create_table "orders", :force => true do |t|
+    t.integer "client_id"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"
@@ -34,8 +50,12 @@ ActiveRecord::Schema.define(:version => 20120905193530) do
   create_table "products", :force => true do |t|
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.string   "description"
-    t.string   "name"
+    t.string   "part_number"
+  end
+
+  add_index "products", ["part_number"], :name => "index_products_on_part_number"
+
+  create_table "roles", :force => true do |t|
   end
 
   create_table "tags", :force => true do |t|
