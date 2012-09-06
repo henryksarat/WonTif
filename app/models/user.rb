@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name
+  attr_accessible :email, :first_name, :last_name, :terms_of_service
   
   validates :email, :presence => true,
   		    :format => { 
@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   		    	:message => " invalid!!"
   		    }    
   validates :first_name, :presence => true
-  validates :last_name, :presence => true    
+  validates :last_name, :presence => true
+  validates :terms_of_service, :acceptance => true
 end
