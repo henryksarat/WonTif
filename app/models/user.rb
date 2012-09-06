@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :first_name, :last_name, :terms_of_service
+  attr_accessible :email, :first_name, :last_name, :terms_of_service, :email_confirmation
   
   validates :email, :presence => true,
+  		    :confirmation => true,
   		    :format => { 
   		    	:with => /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/, 
   		    	:message => " invalid!!"
@@ -9,4 +10,5 @@ class User < ActiveRecord::Base
   validates :first_name, :presence => true
   validates :last_name, :presence => true
   validates :terms_of_service, :acceptance => true
+  validates :email_confirmation, :presence => true
 end
