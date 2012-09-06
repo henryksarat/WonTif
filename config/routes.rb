@@ -2,6 +2,7 @@ WonTif::Application.routes.draw do
   resources :posts do
    resources :comments
   end
+  resources :users
 
   root :to => "home#index"
 
