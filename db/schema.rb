@@ -17,7 +17,10 @@ ActiveRecord::Schema.define(:version => 20120905215348) do
     t.integer "client_id"
   end
 
+  add_index "addresses", ["client_id"], :name => "index_addresses_on_client_id"
+
   create_table "clients", :force => true do |t|
+    t.integer "orders_count"
   end
 
   create_table "clients_roles", :id => false, :force => true do |t|
@@ -38,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20120905215348) do
   create_table "orders", :force => true do |t|
     t.integer "client_id"
   end
+
+  add_index "orders", ["client_id"], :name => "index_orders_on_client_id"
 
   create_table "posts", :force => true do |t|
     t.string   "name"

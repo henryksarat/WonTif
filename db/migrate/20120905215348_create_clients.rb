@@ -1,26 +1,31 @@
 class CreateClients < ActiveRecord::Migration
-  def up
+  def change
    create_table :addresses do |t|
     t.references :client
+    
+    t.timestamps
    end   
    create_table :orders do |t|
     t.references :client
+    
+    t.timestamps
    end   
-   create_table :clients do |t|    
+   create_table :clients do |t|
+    t.integer :orders_count
+    
+    t.timestamps
    end
-   create_table :roles do |t|    
+   create_table :roles do |t|    	   
+    t.timestamps
    end
    create_table 'clients_roles', :id => false do |t|
     t.column :client_id, :integer
     t.column :role_id, :integer
+    
+    t.timestamps
    end
-  end
-
-  def down
-   drop_table 'clients_roles'
-   drop_table :roles
-   drop_table :clients
-   drop_table :orders
-   drop_table :addresses
+   
+   add_index :orders, :client_id
+   add_index :addresses, :client_id
   end
 end
