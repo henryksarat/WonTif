@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120906181848) do
+ActiveRecord::Schema.define(:version => 20120907192248) do
 
   create_table "comments", :force => true do |t|
     t.string   "commenter"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20120906181848) do
     t.string   "last_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "workout_logs", :force => true do |t|
+    t.string   "workout_name"
+    t.integer  "reps"
+    t.integer  "set"
+    t.decimal  "pounds"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

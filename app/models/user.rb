@@ -22,7 +22,9 @@ class User < ActiveRecord::Base
   validates :email_confirmation, :presence => true
   validates_with GoodnessValidator, :fields => [:first_name, :last_name]
   
-   after_find do |user|
+  after_find do |user|
     puts "Finding of users shot off!"
   end
+  
+ has_many :workout_logs, :dependent => :destroy
 end
