@@ -18,5 +18,5 @@ class User < ActiveRecord::Base
   			}
   validates :terms_of_service, :acceptance => true
   validates :email_confirmation, :presence => true
-  validates_with GoodnessValidator
+  validates_with GoodnessValidator, :fields => [:first_name, :last_name]
 end
