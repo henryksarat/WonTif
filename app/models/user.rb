@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   validates :terms_of_service, :acceptance => true
   validates :email_confirmation, :presence => true
   validates_with GoodnessValidator, :fields => [:first_name, :last_name]
+  
+   after_find do |user|
+    puts "Finding of users shot off!"
+  end
 end

@@ -41,3 +41,6 @@ gem 'jquery-rails'
 
 # To use debugger
  gem 'debugger'
+ 
+#User for displaying error messages on views
+gem 'dynamic_form'
