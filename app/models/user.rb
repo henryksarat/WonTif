@@ -1,4 +1,5 @@
 require 'GoodnessValidator.rb'
+require 'EmailValidator.rb'
 
 class User < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :terms_of_service, :email_confirmation
@@ -9,7 +10,8 @@ class User < ActiveRecord::Base
   		    :format => { 
   		    	:with => /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/, 
   		    	:message => " invalid!!"
-  		    }    
+  		    },
+  		    :email => true
   validates :first_name, :presence => true, :length => { :in => 1..10 }
   validates :last_name, :presence => true,
   			:exclusion => {
