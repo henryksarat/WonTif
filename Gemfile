@@ -5,6 +5,7 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
 group :development, :test do
  gem 'sqlite3'
 end
@@ -40,4 +41,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'
+ 
+#User for displaying error messages on views
+gem 'dynamic_form'

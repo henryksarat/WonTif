@@ -1,6 +1,16 @@
 WonTif::Application.routes.draw do
-  get "home/index"
+<<<<<<< HEAD
+  root :to => "home#index"
+  
+=======
+  resources :posts do
+   resources :comments
+  end
+  resources :users
 
+  root :to => "home#index"
+
+>>>>>>> 850b3da16492a6998b14ee6025b0c721787cb55d
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

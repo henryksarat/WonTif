@@ -1,0 +1,29 @@
+<%= form_for(@user) do |f| %>
+  <%= f.error_messages :header_message => "Invalid User!",
+  :message => "You'll need to fix the following fields:",
+  :header_tag => :h3 %>
+ 
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :email_confirmation %><br />
+    <%= f.text_field :email_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :terms_of_service %><br />
+    <%= f.check_box :terms_of_service %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

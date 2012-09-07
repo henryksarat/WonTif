@@ -5,8 +5,17 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'pg'
+<<<<<<< HEAD
+group :development, :test do
+=======
+group :development do
+>>>>>>> 850b3da16492a6998b14ee6025b0c721787cb55d
+ gem 'sqlite3'
+end
+
+group :production do
+ gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,4 +44,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ gem 'debugger'
+ 
+#User for displaying error messages on views
+gem 'dynamic_form'
