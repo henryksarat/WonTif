@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20120909222910) do
 
   add_index "routines", ["user_id"], :name => "index_routines_on_user_id"
 
-  create_table "routines_workouts", :force => true do |t|
+  create_table "routines_workouts", :id => false, :force => true do |t|
     t.integer  "workout_id"
     t.integer  "routine_id"
     t.datetime "created_at", :null => false

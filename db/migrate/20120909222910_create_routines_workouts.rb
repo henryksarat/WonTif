@@ -1,6 +1,6 @@
 class CreateRoutinesWorkouts < ActiveRecord::Migration
   def change
-    create_table :routines_workouts do |t|
+    create_table :routines_workouts, :id => false do |t|
       t.references :workout
       t.references :routine
       
