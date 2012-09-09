@@ -3,5 +3,5 @@ class Workout < ActiveRecord::Base
   
   has_many :workoutlogs
   has_many :users, :through => :WorkoutLogs
-  has_many :routine_workouts
+  has_and_belongs_to_many :routines
 end

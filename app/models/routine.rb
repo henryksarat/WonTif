@@ -1,7 +1,7 @@
 class Routine < ActiveRecord::Base
   belongs_to :users
-  has_many :RoutineWorkouts
-  has_many :workouts, :through => :RoutineWorkouts
+  has_and_belongs_to_many :workouts
+  has_many :RoutinesWorkouts
   
   attr_accessible :description, :name
 end

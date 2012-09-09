@@ -29,5 +29,5 @@ class User < ActiveRecord::Base
  has_many :WorkoutLogs, :dependent => :destroy
  has_many :workouts, :through => :WorkoutLogs
  has_many :routines
- has_many :RoutineWorkouts, :through => :routines
+ has_many :RoutinesWorkouts, :through => :routines
 end

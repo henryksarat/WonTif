@@ -39,13 +39,6 @@ ActiveRecord::Schema.define(:version => 20120909222910) do
 
   add_index "products", ["part_number"], :name => "index_products_on_part_number"
 
-  create_table "routine_workouts", :force => true do |t|
-    t.integer  "workout_id"
-    t.integer  "routine_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "routines", :force => true do |t|
     t.string   "name"
     t.string   "description"
@@ -55,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20120909222910) do
   end
 
   add_index "routines", ["user_id"], :name => "index_routines_on_user_id"
+
+  create_table "routines_workouts", :force => true do |t|
+    t.integer  "workout_id"
+    t.integer  "routine_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "tags", :force => true do |t|
     t.string   "name"
