@@ -3,6 +3,7 @@ WonTif::Application.routes.draw do
    resources :comments
   end
   resources :users
+  resources :routines
 
   root :to => "home#index"
 

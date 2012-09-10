@@ -1,0 +1,25 @@
+<h1>Listing Routines</h1>
+ 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @routines.each do |routine| %>
+  <tr>
+    <td><%= routine.name %></td>
+    <td><%= routine.description %></td>
+    <td><%= link_to 'Show', routine %></td>
+    <td><%= link_to 'Edit', edit_routine_path(routine) %></td>
+    <td><%= link_to 'Remove', routine, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+ 
+<%= link_to 'New routine', new_routine_path %>
