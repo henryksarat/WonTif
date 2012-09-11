@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.8'
 
@@ -8,6 +8,13 @@ gem 'rails', '3.2.8'
 
 group :development, :test do
  gem 'sqlite3'
+ gem 'cucumber-rails'
+ gem 'cucumber-rails-training-wheels'
+ gem 'capybara'
+ gem 'launchy'
+ gem 'rspec-rails'
+ gem 'simplecov'
+ gem 'database_cleaner'
 end
 
 group :production do
