@@ -30,7 +30,7 @@ module WithinHelpers
   end
 end
 World(WithinHelpers)
-=begin
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
@@ -161,7 +161,7 @@ Then /^the "([^"]*)" field(?: within (.*))? should not contain "([^"]*)"$/ do |f
     end
   end
 end
-=end
+
 Then /^the "([^"]*)" field should have the error "([^"]*)"$/ do |field, error_message|
   element = find_field(field)
   classes = element.find(:xpath, '..')[:class].split(' ')
@@ -192,7 +192,7 @@ Then /^the "([^"]*)" field should have the error "([^"]*)"$/ do |field, error_me
     end
   end
 end
-=begin
+
 Then /^the "([^"]*)" field should have no error$/ do |field|
   element = find_field(field)
   classes = element.find(:xpath, '..')[:class].split(' ')
@@ -252,4 +252,3 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
-=end

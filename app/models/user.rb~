@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
     puts "Finding of users shot off!"
   end
   
- has_many :workoutlogs, :dependent => :destroy
- has_one :workout, :through => :workoutlog
+ has_many :WorkoutLogs, :dependent => :destroy
+ has_many :workouts, :through => :WorkoutLogs
+ has_many :routines
+ has_many :RoutinesWorkouts, :through => :routines
 end
