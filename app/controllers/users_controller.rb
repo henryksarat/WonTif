@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url, notice: 'Post was successfully created.' }
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+     end
     end
   end
   
