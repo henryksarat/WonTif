@@ -8,7 +8,7 @@ gem 'rails', '3.2.8'
 
 group :development, :test do
  gem 'sqlite3'
- gem 'cucumber-rails'
+ gem 'cucumber-rails', require:false
  gem 'cucumber-rails-training-wheels'
  gem 'capybara'
  gem 'launchy'
@@ -16,6 +16,9 @@ group :development, :test do
  gem 'simplecov'
  gem 'database_cleaner'
  gem 'factory_girl_rails'
+ gem 'guard-spork'
+ gem 'spork'
+ gem 'wdm'
 end
 
 group :production do
