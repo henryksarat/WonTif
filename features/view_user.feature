@@ -25,3 +25,4 @@ Background: users have been added to database
   When I press "Create"
   Then the "Email" field should have the error "can't be blank"
   And I should be on the new user page
+  And I should see "New User" in the selector "h1"

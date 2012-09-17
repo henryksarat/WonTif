@@ -12,6 +12,10 @@ end
 Given /^I go to the new user page$/ do
  visit new_user_path
 end
+
+When /^I visit the home page$/ do
+ visit root_path
+end
  
 Given /^I fill in "([^"]*)" with "([^"]*)"$/ do |arg1, arg2|
   fill_in(arg1, :with => arg2)
@@ -34,9 +38,13 @@ Then /^I should be on the user list page$/ do
 end
 
 Then /^I should be on the new user page$/ do
- page.should have_content('New user')
+ page.should have_content('New User')
 end
  
 Then /^I should see "([^"]*)"$/ do |arg1|
   page.should have_content(arg1)
+end
+
+Then /^I should see "([^"]*)" in the selector "([^"]*)"$/ do |text, selector|
+  page.should have_selector selector, text: text
 end
