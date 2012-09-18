@@ -16,6 +16,10 @@ end
 When /^I visit the home page$/ do
  visit root_path
 end
+
+When /^I visit the about us page$/ do
+ visit '/static_pages/about'
+end
  
 Given /^I fill in "([^"]*)" with "([^"]*)"$/ do |arg1, arg2|
   fill_in(arg1, :with => arg2)
