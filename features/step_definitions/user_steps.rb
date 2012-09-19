@@ -18,7 +18,7 @@ When /^I visit the home page$/ do
 end
 
 When /^I visit the about us page$/ do
- visit '/static_pages/about'
+ visit about_path
 end
  
 Given /^I fill in "([^"]*)" with "([^"]*)"$/ do |arg1, arg2|
