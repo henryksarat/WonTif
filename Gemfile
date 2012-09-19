@@ -14,6 +14,7 @@ group :development, :test do
  gem 'capybara'
  gem 'launchy'
  gem 'rspec-rails'
+ gem 'guard-rspec'
  gem 'simplecov'
  gem 'database_cleaner'
  gem 'factory_girl_rails'
@@ -21,6 +22,19 @@ group :development, :test do
  gem 'spork'
  gem 'wdm'
 end
+
+# Test gems on Macintosh OS X
+group :test do
+  gem 'rb-fsevent', :require => false
+  gem 'growl'
+end 
+
+# Test gems on Windows
+group :test do
+  gem 'rb-fchange'
+  gem 'rb-notifu', '0.0.4'
+  gem 'win32console', '1.3.0'
+end 
 
 group :production do
  gem 'pg'
