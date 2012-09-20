@@ -24,12 +24,6 @@ group :development, :test do
  gem 'wdm'
 end
 
-# Test gems on Macintosh OS X
-group :test do
-  gem 'rb-fsevent', :require => false
-  gem 'growl'
-end 
-
 # Test gems on Windows
 group :test do
   gem 'rb-fchange'
