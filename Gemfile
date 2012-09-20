@@ -66,3 +66,5 @@ gem 'jquery-rails'
  
 #User for displaying error messages on views
 gem 'dynamic_form'
+
+gem 'annotate', group: :development
