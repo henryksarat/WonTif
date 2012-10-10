@@ -13,11 +13,7 @@ class UsersController < ApplicationController
     @user = User.new
     respond_to do |format|
       format.html 
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @user }
-        format.xml { render xml: @user }
-      end
+      format.json { render json: @post }
     end
   end
 
