@@ -70,3 +70,5 @@ gem 'dynamic_form'
 gem 'annotate', group: :development
 
 gem 'test-unit'
+
+gem 'rake-runner'
