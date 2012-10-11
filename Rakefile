@@ -4,8 +4,5 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-
-rake db:migrate
-
 WonTif::Application.load_tasks
 
