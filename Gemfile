@@ -21,14 +21,12 @@ group :development, :test do
  gem 'factory_girl_rails'
  gem 'guard-spork'
  gem 'spork'
- gem 'wdm'
 end
 
 # Test gems on Windows
 group :test do
   gem 'rb-fchange'
   gem 'rb-notifu', '0.0.4'
-  gem 'win32console', '1.3.0'
 end 
 
 group :production do
